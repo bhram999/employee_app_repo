@@ -4,7 +4,7 @@
 <div id="main">
 <div id="right_part"><h3>Sort By:</h3></div>
 <div id="left_part">
-<%= select_tag(:sort, options_for_select([['Sort', 0], ['Age ASC', 1], ['Salary', 2], ['Department', 3], ['Retired', 4], ['highest Salary', 5], ['Top 5 salaries', 6], ['Senior5 not Retired', 7], ['lowest Salary', 8], ['Department wise max sal', 10], ['Senior W lowest salary', 9]], 0), 
+<%= select_tag(:sort, options_for_select([['Sort', 0], ['Age ASC', 1], ['Salary', 2], ['Department', 3], ['Retired', 4], ['highest Salary', 5], ['Top 5 salaries', 6], ['Senior5 not Retired', 7], ['lowest Salary', 8], ['Department wise max sal', 9], ['Senior W lowest salary', 10]], 0), 
 :onchange => 'sort()') %>
 </div><div id="third_part">
 <%= link_to 'New Employee', new_employee_path %></div>
