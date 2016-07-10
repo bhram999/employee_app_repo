@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "employees#index"
   get '/employees/order' => 'employees#order'
   resources :departments
   resources :employees
