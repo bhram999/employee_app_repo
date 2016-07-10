@@ -71,5 +71,7 @@ h1{text-align: center;}
     display:inline-block;
 }
 .form_center {
-	margin-left: 580px
+	width:250px;
+    margin-left: auto;
+    margin-right: auto;
 }
