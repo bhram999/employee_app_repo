@@ -9,7 +9,7 @@ class Employee < ActiveRecord::Base
   scope :top5_sal, -> {order('salary DESC').first(5)}
   scope :senior5, -> {where("age < 65").order('age DESC').first(5)}
   scope :low_sal, -> {where("salary = #{minimum("salary")}")}
-  scope :low_senior, -> {where("age > 60 && age < 65").order("salary ASC").first(1)}
+  scope :low_senior, -> {where("age > 60").order("salary ASC").first(1)}
   scope :max_sal, -> {select("id","name", "age", "email", "max(salary) as salary", "department_id").group("department_id")}
 
 end
