@@ -64,6 +64,10 @@ class EmployeesController < ApplicationController
     elsif select_tag_value == "10"
       @employees_order = Employee.all.low_senior
     render layout: false
+    elsif select_tag_value == "11"
+      @employees_order = Employee.all.high_sal
+      @employees_order2 = Employee.all.low_sal
+    render layout: false
     end
   end 
 

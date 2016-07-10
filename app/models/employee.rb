@@ -11,5 +11,6 @@ class Employee < ActiveRecord::Base
   scope :low_sal, -> {where("salary = #{minimum("salary")}")}
   scope :low_senior, -> {where("age > 60").order("salary ASC").first(1)}
   scope :max_sal, -> {select("id","name", "age", "email", "max(salary) as salary", "department_id").group("department_id")}
+  
 
 end
