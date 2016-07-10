@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Employees</h1>
+<div id="main">
+<div id="right_part"><h3>Sort By:</h3></div>
+<div id="left_part">
+<%= select_tag(:sort, options_for_select([['Sort', 0], ['Age ASC', 1], ['Salary', 2], ['Department', 3], ['Retired', 4], ['highest Salary', 5], ['Top 5 salaries', 6], ['Senior5 not Retired', 7], ['lowest Salary', 8], ['Department wise max sal', 10], ['Senior W lowest salary', 9]], 0), 
+:onchange => 'sort()') %>
+</div><div id="third_part">
+<%= link_to 'New Employee', new_employee_path %></div>
+<div id="fourth_part">
+<%= link_to 'List Departments', departments_path %></div>
+</div>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Age</th>
+      <th>Salary</th>
+      <th>Department</th>
+      <th colspan="3">CRUD Options</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  
+  <%= render 'table_list' %>
+    
+  </tbody>
+</table>
+
+<br>
+
+

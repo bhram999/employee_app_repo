@@ -1,0 +1,33 @@
+<h1>Employee Details</h1>
+<div class="form_center">
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @employee.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @employee.email %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @employee.age %>
+</p>
+
+<p>
+  <strong>Salary:</strong>
+  <%= @employee.salary %>
+</p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @employee.department.department_name %>
+</p>
+
+<%= link_to 'Edit', edit_employee_path(@employee) %> |
+<%= link_to 'Back', employees_path %>
+</div>
