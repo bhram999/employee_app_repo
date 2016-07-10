@@ -51,7 +51,15 @@ class EmployeesController < ApplicationController
       @employees_order = Employee.all.low_sal
       render layout: false
     elsif select_tag_value == "9"
-      @employees_order = Employee.all.max_sal
+    dep_ids = []
+    dep_ids = Department.all.pluck("id")
+    high_sal_dep = {}
+    high_sal_dep = Department.all.includes(:employees).group(:department_id).maximum("salary")
+    salary = []
+    dep_ids.each do |id|
+    salary.push(high_sal_dep[id])
+    end
+    @employees_order = Employee.all.where(salary: salary)
     render layout: false
     elsif select_tag_value == "10"
       @employees_order = Employee.all.low_senior
